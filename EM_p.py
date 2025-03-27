@@ -21,13 +21,13 @@ cap = None
 try:
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
-        print("无法打开摄像头，请检查设备连接或权限。")
+        print("The camera can't be turned on, please check the device connection or permissions.")
         exit(1)
     cap.set(cv2.CAP_PROP_FPS, 15)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 except Exception as e:
-    print(f"打开摄像头时出现错误: {e}")
+    print(f"There was an error when switching on the camera.: {e}")
     exit(1)
 
 # Sliding window to store the most recent emotions
@@ -190,7 +190,7 @@ def capture_frame():
     global latest_frame
     while True:
         if cap is None or not cap.isOpened():
-            print("摄像头未正确打开，无法捕获帧。")
+            print("The camera is not properly turned on to capture frames.")
             time.sleep(1)
             continue
         ret, frame = cap.read()
