@@ -3,11 +3,8 @@
 REDSG is a lightweight system that can recognize emotion from camera, and offers flexible voice responses according to emotion changes simultaneously.
 
 # Accurate emotion recognition effect：
-<img width="480" alt="35e9cd93cc59b30dab1c8af7dfec5c7" src="https://github.com/user-attachments/assets/46cd2ca4-5dc7-4bbe-b1c0-69cc2d2cf568" />
-<img width="480" alt="f41bb7c323a675349e5b1d5e82f0175" src="https://github.com/user-attachments/assets/ad67809f-edf5-4390-8424-b187b85c85aa" />
-<img width="480" alt="ef36742ea2d1625ae7d534d1de73c86" src="https://github.com/user-attachments/assets/43ce4ebc-4d01-41c2-abc8-9b96099111da" />
-<img width="480" alt="41dab9ddb38c79e5996fc144111defd" src="https://github.com/user-attachments/assets/e06a72fd-0fe8-4ba8-b35c-9dd7703ee557" />
-<img width="480" alt="493b0f0545e2f21983776f64ac9245e" src="https://github.com/user-attachments/assets/ec9db0a4-857c-44c0-8a57-2098292e9422" />
+<img width="480" alt="35e9cd93cc59b30dab1c8af7dfec5c7" src="https://github.com/user-attachments/assets/46cd2ca4-5dc7-4bbe-b1c0-69cc2d2cf568" /><img width="480" alt="f41bb7c323a675349e5b1d5e82f0175" src="https://github.com/user-attachments/assets/ad67809f-edf5-4390-8424-b187b85c85aa" />
+<img width="480" alt="ef36742ea2d1625ae7d534d1de73c86" src="https://github.com/user-attachments/assets/43ce4ebc-4d01-41c2-abc8-9b96099111da" /><img width="480" alt="41dab9ddb38c79e5996fc144111defd" src="https://github.com/user-attachments/assets/e06a72fd-0fe8-4ba8-b35c-9dd7703ee557" /><img width="480" alt="493b0f0545e2f21983776f64ac9245e" src="https://github.com/user-attachments/assets/ec9db0a4-857c-44c0-8a57-2098292e9422" />
 <img width="480" alt="4905ce2bc7bda105001aad9347f290e" src="https://github.com/user-attachments/assets/58f8f526-2130-4c3b-80c4-126328caffd9" />
 
 
