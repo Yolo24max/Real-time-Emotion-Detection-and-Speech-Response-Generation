@@ -31,7 +31,7 @@ REDSG is a lightweight system that can recognize emotion from camera, and offers
 #### Configure your OpenAI key.
 
 ### Step4:
-#### Configure the virtual environment according to the requirements.txt in the requirements file, enter the file path in the terminal, and run the Python EM_p.py.
+#### Configure the virtual environment according to the requirements.txt in the requirements file, enter the file path in the terminal, and run the python EM_p.py.
 
 ### Step5:
 #### Press Ctrl+C in the terminal to close the programme.
