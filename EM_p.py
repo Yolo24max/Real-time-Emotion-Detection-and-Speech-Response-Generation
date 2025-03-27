@@ -79,7 +79,7 @@ def emotion_analysis():
 def generate_dialog(emotion):
     """Generate short dialog text based on the detected emotion (limit to 1-2 sentences)"""
     try:
-        prompt = f"Create a natural and conversational response based on the user's emotion: '{emotion}'. Keep the response casual, short, and engaging. Limit it to 1-2 sentences."
+        prompt = f"Create a natural and conversational response based on the user's emotion: '{emotion}'. Keep the response casual, short, and engaging. Limit it to 1-2 sentences.Your response is to a 23-33 year old woman living alone in North America, please think of yourself as a cute intelligent AI pet companion."
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",  # Use an appropriate model
             messages=[{"role": "system", "content": "You are a friendly assistant."},
