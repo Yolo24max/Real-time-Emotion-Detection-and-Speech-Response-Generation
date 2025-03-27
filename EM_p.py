@@ -11,16 +11,24 @@ import pygame
 import json
 
 # Initialize pygame mixer for audio playback
-pygame.mixer.init()
+#pygame.mixer.init()
 
 # Set OpenAI API key
 openai.api_key = "YOUR_API_KEY"
 
 # Camera settings
-cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FPS, 15)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+cap = None
+try:
+    cap = cv2.VideoCapture(0)
+    if not cap.isOpened():
+        print("无法打开摄像头，请检查设备连接或权限。")
+        exit(1)
+    cap.set(cv2.CAP_PROP_FPS, 15)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+except Exception as e:
+    print(f"打开摄像头时出现错误: {e}")
+    exit(1)
 
 # Sliding window to store the most recent emotions
 emotion_window = collections.deque(maxlen=2)
@@ -181,6 +189,10 @@ def capture_frame():
     """Frame capture in a separate thread"""
     global latest_frame
     while True:
+        if cap is None or not cap.isOpened():
+            print("摄像头未正确打开，无法捕获帧。")
+            time.sleep(1)
+            continue
         ret, frame = cap.read()
         if not ret:
             print("Unable to capture frame from camera")
@@ -193,6 +205,8 @@ def capture_frame():
             cv2.putText(frame, f"Emotion: {last_emotion}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
         cv2.imshow('Emotion Analysis', frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
 # Start frame capture thread
 capture_thread = threading.Thread(target=capture_frame, daemon=True)
@@ -204,5 +218,6 @@ try:
 except KeyboardInterrupt:
     print("Program interrupted by the user")
 finally:
-    cap.release()
+    if cap is not None:
+        cap.release()
     cv2.destroyAllWindows()
