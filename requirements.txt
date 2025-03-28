@@ -3,5 +3,6 @@ opencv-python==4.11.0.86
 deepface==0.0.93
 tf-keras==2.19.0
 openai==0.28.0
-pyttsx3==2.98
+edge_tts==7.0.0
 pygame==2.6.1
+emoji==2.14.1
