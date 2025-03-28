@@ -87,6 +87,15 @@ b. **Cross-platform support**: pyttsx3 supports cross-platform operation (Window
 c. **Speech customization capabilities**: pyttsx3 allows customization of voice tone, speech rate, and volume to match different emotional states, enhancing the immersion of speech interactions.
 
 
+## Algorithm Highlights: 
+### 1. Downsampling is achieved using **cv2.resize()** with bilinear interpolation, which calculates the pixel value as a weighted average of the four surrounding neighboring pixels.
+
+### 2. **DeepFace** employs **OpenCV**, an efficient and lightweight library, as the backend for face detection. It filters facial regions and aligns faces using key point localization, such as eyes. 
+
+### 3. The **Emotion model** in **DeepFace** extracts features through a three-layer convolutional network, progressively capturing features from lower to higher levels. These features are then integrated via a two-layer deep neural network, followed by **Softmax** and **Argmax** for final classification.  
+
+### 4. A **pretrained GPT-3.5 Turbo model**, known for its strong contextual awareness and adaptability, is utilized to generate personalized real-time responses based on emotion prediction results.
+
 
 ## Problems & Resolutions
 ### 1. **Ensuring Real-Time Performance and Responsiveness in Multithreading**: Using multithreading and thread synchronization, the system ensures that facial capture, emotion analysis, and speech playback tasks run safely in parallel within a multithreaded environment, avoiding race conditions and ensuring efficient real-time processing.
