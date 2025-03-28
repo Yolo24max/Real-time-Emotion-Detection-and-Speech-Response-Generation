@@ -79,7 +79,7 @@ b. **Efficient response generation**: GPT-3.5-Turbo can quickly generate high-qu
 c. **Scalability and flexibility**: GPT-3.5-Turbo has strong scalability, capable of adjusting the response strategies of the speech interaction system according to different emotional states, adapting to various interaction scenarios.
 
 ### 3. We use edge_tts to convert text into real-time speech.
-#### Why we choose OpenAI's GPT-3.5-Turbo large language model for our project?
+#### Why we choose edge_tts for our project?
 a. **Lightweight and efficient**: edge_tts is a lightweight text-to-speech service that quickly generates speech output, meeting low latency requirements.
 
 b. **Cross-platform support**: edge_tts supports cross-platform operation (Windows, macOS, Linux), making it easy to deploy the speech interaction system across various devices.
