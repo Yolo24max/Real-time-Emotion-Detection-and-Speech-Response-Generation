@@ -33,7 +33,7 @@ except Exception as e:
     print(f"There was an error when switching on the camera: {e}")
     exit(1)
 
-# 用于控制emotion_analysis线程是否继续运行的标志位
+# A flag used to control whether the emotion_analysis thread continues to run.
 should_exit = False
 
 # Sliding window to store the most recent emotions
@@ -149,7 +149,7 @@ async def convert_and_play_speech(text, emotion):
     """Convert the text to speech and play it using Edge-TTS"""
     global is_playing
     is_playing = True
-    voice = "zh-CN-XiaoyiNeural"  # Chinese female voice, change to "en-US-GuyNeural" for English
+    voice = "zh-CN-XiaoyiNeural" 
     rate = "+0%"  # Default rate
     volume = "+0%"  # Default volume
 
