@@ -33,6 +33,9 @@ except Exception as e:
     print(f"There was an error when switching on the camera: {e}")
     exit(1)
 
+# 用于控制emotion_analysis线程是否继续运行的标志位
+should_exit = False
+
 # Sliding window to store the most recent emotions
 emotion_window = collections.deque(maxlen=2)
 
@@ -73,11 +76,11 @@ def get_persona_based_prompt(emotion, user_data):
 
 def emotion_analysis():
     """Perform emotion analysis and control speech playback (runs in a separate thread)"""
-    global last_emotion, last_analysis_time, is_playing, latest_frame, last_speech_time
+    global last_emotion, last_analysis_time, is_playing, latest_frame, last_speech_time, should_exit
 
     user_data = load_user_data()
 
-    while True:
+    while not should_exit:
         time.sleep(0.1)
 
         # Locking the frame to ensure thread safety
@@ -203,11 +206,14 @@ def log_error(error):
 
 # Handle Ctrl+C for graceful exit
 def signal_handler(sig, frame):
+    global should_exit
     print("Program interrupted. Exiting...")
     if cap is not None:
         cap.release()  # Release the camera resource
     cv2.destroyAllWindows()  # Close OpenCV windows
-    pygame.mixer.quit()  # Stop the pygame mixer
+    if pygame.mixer.get_init():  # Check if pygame mixer is initialized
+        pygame.mixer.quit()  # Stop the pygame mixer
+    should_exit = True
     sys.exit(0)  # Exit the program
 
 # Register signal handler for graceful exit
@@ -227,7 +233,8 @@ while True:
         latest_frame = frame
 
     cv2.imshow("Emotion Analysis", frame)
-
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
 cap.release()
 cv2.destroyAllWindows()
